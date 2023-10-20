@@ -1,7 +1,9 @@
 from services.singleton import Database
-from models.builder import FastFoodBuilder, Hamburguesa, Bebida, Postre
-from models.precios import PrecioTotalHandler
-from controllers.chain_of_responsability import HamburguesaHandler, BebidaHandler, PostreHandler
+from domain.builder import FastFoodBuilder, Hamburguesa, Bebida, Postre
+from domain.precios import PrecioTotalHandler
+from controllers.hamburguesa import HamburguesaHandler
+from controllers.bebida import BebidaHandler
+from controllers.postre import PostreHandler
 
 def main():
 
