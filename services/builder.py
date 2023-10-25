@@ -41,3 +41,25 @@ class FastFood:
         self.hamburguesa = None
         self.bebida = None
         self.postre = None
+
+builder = FastFoodBuilder()
+
+burger_choice = input("¿Desea agregar una hamburguesa a su pedido? (s/n): ")
+drink_choice = input("¿Desea agregar una bebida a su pedido? (s/n): ")
+dessert_choice = input("¿Desea agregar un postre a su pedido? (s/n): ")
+
+if burger_choice.lower() == 's':
+    builder.agregar_hamburguesa(Hamburguesa())
+if drink_choice.lower() == 's':
+    builder.agregar_bebida(Bebida())
+if dessert_choice.lower() == 's':
+    builder.agregar_postre(Postre())
+
+fast_food = builder.build()
+
+if fast_food.hamburguesa:
+    print(f'{fast_food.hamburguesa.prepare()}')
+if fast_food.bebida:
+    print(f'{fast_food.bebida.prepare()}')
+if fast_food.postre:
+    print(f'{fast_food.postre.prepare()}')
