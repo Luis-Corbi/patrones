@@ -1,4 +1,4 @@
-from controllers.chain import AbstractHandler
+from domain.chain import AbstractHandler
 
 class PostreHandler(AbstractHandler):
     def handle(self, request):

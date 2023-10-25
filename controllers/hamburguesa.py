@@ -1,4 +1,4 @@
-from controllers.chain import AbstractHandler
+from domain.chain import AbstractHandler
 
 class HamburguesaHandler(AbstractHandler):
     def handle(self, request):
