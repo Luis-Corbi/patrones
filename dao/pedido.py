@@ -2,11 +2,11 @@ from domain.precios import PrecioTotalHandler
 from controllers.hamburguesa import HamburguesaHandler
 from controllers.bebida import BebidaHandler
 from controllers.postre import PostreHandler
-from services.builder import fast_food
+from services.builder import generar_pedido
 
 def precios():
-    precio_total_handler = PrecioTotalHandler(fast_food.hamburguesa, fast_food.bebida, fast_food.postre)
-    print(f'Valor total: {precio_total_handler.obtener_precio_total()}')
+    precio_total_handler = PrecioTotalHandler(generar_pedido.hamburguesa, generar_pedido.bebida, generar_pedido.postre)
+    print(f'Valor total: ${precio_total_handler.obtener_precio_total()}')
 
     hamburguesa_handler = HamburguesaHandler()
     bebida_handler = BebidaHandler()
@@ -14,9 +14,9 @@ def precios():
 
     hamburguesa_handler.set_next(bebida_handler).set_next(postre_handler)
 
-    if fast_food.hamburguesa:
+    if generar_pedido.hamburguesa:
         print(hamburguesa_handler.handle('Hamburguesa'))
-    if fast_food.bebida:
+    if generar_pedido.bebida:
         print(bebida_handler.handle('Bebida'))
-    if fast_food.postre:
+    if generar_pedido.postre:
         print(postre_handler.handle('Postre'))

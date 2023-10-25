@@ -1,12 +1,12 @@
-from dao.database import data
-from services.builder import fast_food
+from dao.database import conexiondb
+from services.builder import generar_pedido
 from dao.pedido import precios
 
 def main():
 
-    data
+    conexiondb
 
-    fast_food
+    generar_pedido
 
     precios()
 

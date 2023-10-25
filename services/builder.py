@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from domain.precios import HamburguesaPrecioHandler, BebidaPrecioHandler, PostrePrecioHandler
 
 class AbstractFastFood(ABC):
     @abstractmethod
@@ -7,15 +8,15 @@ class AbstractFastFood(ABC):
 
 class Hamburguesa(AbstractFastFood):
     def prepare(self):
-        return 'Hamburguesa completa'
+        return f'Hamburguesa completa ${HamburguesaPrecioHandler().precio()}'
 
 class Bebida(AbstractFastFood):
     def prepare(self):
-        return 'Bebida grande'
+        return f'Bebida grande ${BebidaPrecioHandler().precio()}'
 
 class Postre(AbstractFastFood):
     def prepare(self):
-        return 'Helado de chocolate'
+        return f'Helado de chocolate ${PostrePrecioHandler().precio()}'
 
 class FastFoodBuilder:
     def __init__(self):
@@ -55,11 +56,11 @@ if drink_choice.lower() == 's':
 if dessert_choice.lower() == 's':
     builder.agregar_postre(Postre())
 
-fast_food = builder.build()
+generar_pedido = builder.build()
 
-if fast_food.hamburguesa:
-    print(f'{fast_food.hamburguesa.prepare()}')
-if fast_food.bebida:
-    print(f'{fast_food.bebida.prepare()}')
-if fast_food.postre:
-    print(f'{fast_food.postre.prepare()}')
+if generar_pedido.hamburguesa:
+    print(f'{generar_pedido.hamburguesa.prepare()}')
+if generar_pedido.bebida:
+    print(f'{generar_pedido.bebida.prepare()}')
+if generar_pedido.postre:
+    print(f'{generar_pedido.postre.prepare()}')
