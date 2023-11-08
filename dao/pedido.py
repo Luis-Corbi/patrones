@@ -2,7 +2,7 @@ from domain.precios import PrecioTotalHandler
 from controllers.hamburguesa import HamburguesaHandler
 from controllers.bebida import BebidaHandler
 from controllers.postre import PostreHandler
-from services.builder import generar_pedido
+from services.pedido_builder import generar_pedido
 
 def precios():
     precio_total_handler = PrecioTotalHandler(generar_pedido.hamburguesa, generar_pedido.bebida, generar_pedido.postre)
