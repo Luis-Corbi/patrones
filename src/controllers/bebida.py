@@ -1,4 +1,4 @@
-from domain.handlers import AbstractHandler
+from domain.handlers_abstract import AbstractHandler
 
 class BebidaHandler(AbstractHandler):
     def handle(self, request):
