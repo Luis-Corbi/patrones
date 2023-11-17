@@ -4,7 +4,7 @@ from controllers.bebida import BebidaHandler
 from controllers.postre import PostreHandler
 from services.pedido_builder import generar_pedido
 
-def precios():
+def generar_precio_total():
     precio_total_handler = PrecioTotalHandler(generar_pedido.hamburguesa, generar_pedido.bebida, generar_pedido.postre)
     print(f'Valor total: ${precio_total_handler.obtener_precio_total()}')
 

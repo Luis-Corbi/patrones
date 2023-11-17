@@ -1,6 +1,6 @@
 from dao.database import conexiondb
 from services.pedido_builder import generar_pedido
-from controllers.pedido import precios
+from controllers.pedido import generar_precio_total
 
 def main():
 
@@ -8,7 +8,7 @@ def main():
 
     generar_pedido
 
-    precios()
+    generar_precio_total()
 
 if __name__ == "__main__":
     main()
