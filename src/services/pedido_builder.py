@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from domain.precios import HamburguesaPrecioHandler, BebidaPrecioHandler, PostrePrecioHandler
+from views.menu import burger_choice, drink_choice, dessert_choice
 
 class AbstractFastFood(ABC):
     @abstractmethod
@@ -44,10 +45,6 @@ class FastFood:
         self.postre = None
 
 builder = FastFoodBuilder()
-
-burger_choice = input("¿Desea agregar una hamburguesa a su pedido? (s/n): ")
-drink_choice = input("¿Desea agregar una bebida a su pedido? (s/n): ")
-dessert_choice = input("¿Desea agregar un postre a su pedido? (s/n): ")
 
 if burger_choice.lower() == 's':
     builder.agregar_hamburguesa(Hamburguesa())

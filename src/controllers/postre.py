@@ -1,4 +1,4 @@
-from domain.handler import AbstractHandler
+from domain.handlers import AbstractHandler
 
 class PostreHandler(AbstractHandler):
     def handle(self, request):

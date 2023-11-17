@@ -1,4 +1,4 @@
-from domain.handler import AbstractHandler
+from domain.handlers import AbstractHandler
 
 class HamburguesaHandler(AbstractHandler):
     def handle(self, request):
